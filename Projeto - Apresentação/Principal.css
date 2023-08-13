@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Noto Sans', sans-serif;
+    position: static;
+
+
+}
+body{
+    font-size: large;
+    background-color: #d1a6e4;
+    
+}
+
+
+#cabecalho{
+    height: 60px;
+    background-color: #9400d3 ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+.titulo{
+    padding: 200px;
+}
+
+.logo img, .logo {
+    width: 75px; 
+    position: absolute;
+    top: 0px;
+    margin-left: 55px;
+    
+}
+
+.menu{
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+}
+.menu nav a{
+    color:#ffdb58;
+    text-decoration: none;
+    padding-right: 35px;
+    margin-bottom: 10px;
+  
+}
+.botao button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: none;
+    background: #ffdb58;
+}
+.cadastro{
+    float: left;
+  border: 1px solid rgb(124, 143, 143);
+  display: flex;
+  
+  }
+#pesquisa{
+    height: 600px;
+    width: 359px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin: auto; 
+    margin-top: 30px;
+    
+
+}
+#conteudo{
+    height: 839px;
+    width: 500px;
+    background-color: rgb(137, 61, 180);
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    border-radius: 50px; 
+    margin-left: 200px;  
+
+}
+ input[type="date"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  select{
+    width: 105%;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  .botao-passagensd2{
+    border-radius: 4px;
+    padding: 3px;
+    background: #ffdb58;
+
+  }
+
+#promocoes, .anuncio{
+    height: 840px;
+    width: 700px;
+    background-color: #6b6bcf;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    max-width: 360px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+
+

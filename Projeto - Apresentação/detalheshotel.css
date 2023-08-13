@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Noto Sans', sans-serif;
+
+
+}
+body{
+    font-size: large;
+    background-color: #d1a6e4;
+    
+}
+
+
+
+#cabecalho{
+    height: 60px;
+    background-color: #9400d3 ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+
+}
+.titulo{
+    padding: 200px;
+}
+
+.logo img, .logo {
+    width: 75px; 
+    position: absolute;
+    top: 0px;
+    margin-left: 55px;
+    
+}
+
+.menu{
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+}
+.menu nav a{
+    color:#ffdb58;
+    text-decoration: none;
+    padding-right: 35px;
+    margin-bottom: 10px;
+  
+}
+.botao button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: none;
+    background: #ffdb58;
+}
+.fotos-hotel{
+    float: left;
+    margin-left: 20px; 
+    margin-top: 50px;
+}
+.informacoes-hotel{
+        height: 900px;
+        width: 900px;
+        background-color: #d1a6e4;
+        border-radius: 40px; 
+        margin-left: 400px; 
+}
