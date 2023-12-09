@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Noto Sans', sans-serif;
+    position: static;
+
+}
+body {
+    font-size: 16px;
+    background-color: #d1a6e4;
+    max-width: 1600px;
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+#cabecalho {
+    height: 60px;
+    background-color: #9400d3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.titulo {
+    padding: 0 20px; 
+}
+
+
+.logo img, .logo {
+    width: 50px; 
+    position: absolute;
+    top: 10px;
+    margin-left: 88px;
+    
+}
+
+.menu {
+    width: 100%;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu nav a {
+    color: #ffdb58;
+    text-decoration: none;
+    padding: 0 15px; 
+    margin-bottom: 10px;
+}
+
+.botao button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #ffdb58;
+}
+
+.section-1 h1 {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.conteudo-card-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-img {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(248, 247, 250);
+    border-radius: 20px;
+    width: calc(33.33% - 20px);
+    text-align: center;
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card-img h3 {
+    font-size: 1.5rem;
+}
+
+.card-img p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card-img:hover {
+    transform: scale(1.05);
+    transition: 0.5s all;
+    background-color: rgb(151, 45, 184);
+}
