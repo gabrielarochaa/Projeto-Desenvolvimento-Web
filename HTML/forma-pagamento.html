@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/form.css">
+    <link rel="icon" type="image/x-icon" href="IMG/logo2.svg">
+    <title>FlyPassagens form</title>
+
+</head>
+
+<body>
+    <div class="main-login"> 
+        <div class="left-login">
+            <img src="IMG/animate.svg" class="left-login-image" alt="Animação">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Finalize sua compra</h1>
+                <form id="purchaseForm" onsubmit="return validateForm()">
+                    <div class="formulario">
+                        <label for="formaPagamento" style="color: #FFFF;">Forma de pagamento:</label>
+                        <select id="formaPagamento" required>
+                            <option></option>
+                            <option value="1">Cartão - Débito</option>
+                            <option value="2">Cartão - Crédito</option>
+                            <option value="3">Pix</option>
+                        </select>
+                    </div>
+                    <div class="textfield">
+                        <label for="valorPassagem">Valor da passagem:</label>
+                        <input type="text" id="valorPassagem" placeholder="R$" required>
+                    </div>           
+                    <button type="submit" class="btn-login" style="width: 75%;">Finalizar compra</button>
+                </form>
+                <p class="mensagem" id="successMessage" style="display: none; color: green;">Compra finalizada com sucesso!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var formaPagamento = document.getElementById("formaPagamento").value;
+            var valorPassagem = document.getElementById("valorPassagem").value;
+
+            if (formaPagamento === "" || valorPassagem === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+
+            document.getElementById("successMessage").style.display = "block";
+
+            return false;
+        }
+    </script>
+</body>
+</html>
