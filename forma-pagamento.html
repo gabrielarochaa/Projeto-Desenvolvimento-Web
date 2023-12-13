@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/forma-pagamento.css">
+    <link rel="icon" type="image/x-icon" href="IMG/logo2.svg">
+    <title>FlyPassagens form</title>
+
+</head>
+<body style="font-family: 'Noto Sans', sans-serif;">
+    <div class="main-login"> 
+        <div class="left-login">
+            <img src="IMG/animate.svg" class="left-login-image" alt="Animação">
+        </div>
+        <div class="right-login">
+        <div class="card-login">
+        <h1>Finalize sua compra!</h1>
+        <br>
+        <form>
+            <div class="formulario" >
+                <div class="textfield">
+                    <label for="usuario">Titular do cartão:</label>
+                     <input type="text">
+                </div>
+                <select>
+                    <option value="1">MasterCard</option>
+                    <option value="2">Visa</option>
+                    <option value="3">Elo Creditcard</option>
+                    <option value="4">Diners Club</option>
+                    <option value="5">American Express</option>
+                </select>
+            <div class="textfield">
+                <label for="Cartão">Número do cartão:</label>
+                <input type="tel" >
+            </div>    
+            <div class="textfield">
+                <label for="Validade">Data de validade:</label>
+                <input type="month">
+            </div> 
+            <div class="textfield">
+                <label for="Código">Código de segurança:</label>
+                 <input type="tel">
+            </div>
+        </form>
+
+                <div class="textfield">
+                    <label for="Valor da passagem">Valor da passagem:</label>
+                    <input type="text" placeholder="R$">
+                </div>           
+                <form action="Principal.html">
+                <button type="submit" class="btn-login" style="width: 75%; text-align: center;">Finalizar compra</button>
+                <p class="mensagem">Compra finalizada com sucesso!</p>
+                </form>
+        </div>
+
+            </div>
+        </div>
+    </div>
+        
+
+    
+</body>
+</html>
