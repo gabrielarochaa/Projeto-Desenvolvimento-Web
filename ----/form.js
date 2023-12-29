@@ -22,3 +22,8 @@ function redirecionarParaFormulario() {
     window.location.href = "compra-passagem.html";
 
   }
+ function exibirPromptFeedback() {
+    var feedback = prompt("Por favor, forneça seu feedback sobre nossa agência de passagens aéreas:");
+
+    alert("Obrigado pelo seu feedback!\n\nComentário:\n" + feedback);
+}
