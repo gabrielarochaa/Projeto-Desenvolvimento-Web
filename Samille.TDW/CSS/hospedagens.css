@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: #d1a6e4;
+  width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+    
+}
+#cabecalho{
+    height: 60px;
+    background-color: #9400d3 ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+
+.titulo{
+    padding: 110px;
+    display: flex;
+}
+.logo img, .logo {
+    width: 65px; 
+    position: absolute;
+    top: 0;
+    margin-left: 15px;
+}
+
+.busca-container {
+    display: flex;
+    margin-bottom: 15px;
+    margin-top: 13px;
+    margin-right: 35px;
+}
+
+#campo-busca {
+    font-size: 13px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    margin-right: 2px;
+
+}
+
+#btn-busca {
+    padding: 4px 4px;
+    font-size: 16px;
+    background-color: #f9de80;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.menu{
+    width: 100%;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.menu nav a{
+    color:#ffdb58;
+    text-decoration: none;
+    padding-right: 35px;
+    margin-bottom: 10px;
+  
+}
+.botao button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: none;
+    background: #ffdb58;
+}
+
+.section-1 h1{
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+.hospedagens-card-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    flex-wrap: wrap; 
+    gap: 1rem; 
+
+}
+
+.card-img {
+    margin: 18px;
+    padding: 10px;
+    background-color: rgb(248, 247, 250);
+    border-radius: 20px;
+    max-width: 340px;
+    height: 340px;
+    text-align: center;
+}
+
+.card-img img {
+    width: 165px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card-img h3 {
+    font-size: 1.5rem;
+}
+
+.card-img p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card-img:hover {
+    transform: scale(1.05, 1.05, 1);
+    transition: 0.5s all;
+    background-color: rgb(151, 45, 184);
+}
+
+footer {
+    background-color: rgb(132, 85, 176);
+    color: rgb(15, 13, 13);
+    padding: 40px;
+    width: 100%; 
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #ffdb58;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: rgb(15, 13, 13);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .campo-busca {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+        
+    }
+
+    #cabecalho{
+        max-width: 100%;
+        max-height: auto;
+        height: auto;
+    }
+
+    .titulo {
+        padding: 20px;
+    }
+
+    .logo img, .logo {
+        width: 40px;
+        margin-left: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu nav a {
+        margin-bottom: 5px;
+    }
+}

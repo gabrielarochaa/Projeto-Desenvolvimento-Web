@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/reservarhotel.css">
+    <link rel="stylesheet" href="HTML/hotel1.html">
+    <link rel="icon" type="image/x-icon" href="IMG/logo2.svg">
+    <style>
+        #mensagem-erro {
+            color: red;
+        }
+    </style>
+    <title>FlyPassagens form</title>
+
+    <script>
+        function validarFormulario() {
+            var nome = document.getElementById("Nome").value;
+            var CPF = document.getElementById("CPF-input").value;
+            var quarto = document.getElementById("quarto").value;
+            var telefone = document.getElementById("numeroTelefone").value;
+            var entrada = document.getElementById("entrada").value;
+            var saida = document.getElementById("saida").value;
+
+            if (nome === "" || CPF === "" || quarto === "" || telefone === "" || entrada === "" || saida === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+                return false; 
+            }
+        }  
+        
+        function validarCPF() {
+            var CPF = document.getElementById("CPF-input").value;
+            var mensagemErro = document.getElementById("mensagem-erro");
+    
+            if (CPF.length !== 11) { 
+                mensagemErro.textContent = "CPF inválido, deve ter 11 dígitos";
+            } else {
+                mensagemErro.textContent = "";
+            }
+        }
+        function updateValorHospedagemComAcompanhante() {
+        var valorHospedagem = document.getElementById("valorHospedagem");
+        var valorHospedagemAtual = parseFloat(valorHospedagem.value.replace("R$ ", ""));
+        var acompanhante = document.getElementById("acompanhante").value;
+
+        if (acompanhante !== "") {
+            var novoValor = valorHospedagemAtual * 2;
+            valorHospedagem.value = "R$ " + novoValor.toFixed(2);
+        }
+    }
+        
+        function formatarTelefone() {
+            var telefone = document.getElementById("numeroTelefone").value;
+            var telefoneFormatado = telefone.replace(/\D/g, '');
+            document.getElementById("numeroTelefone").value = telefoneFormatado;
+        }
+        
+        function formatarCPF() {
+            var CPFV = document.getElementById("CPF-input").value;
+            var CPFVFormatado = CPFV.replace(/\D/g, ''); 
+            document.getElementById("CPF-input").value = CPFVFormatado;
+        }
+        function calcularValorHospedagem() {
+    var selectQuarto = document.getElementById("quarto");
+    var valorQuarto = parseFloat(selectQuarto.options[selectQuarto.selectedIndex].getAttribute("data-valor"));
+    
+    var entrada = new Date(document.getElementById("entrada").value);
+    var saida = new Date(document.getElementById("saida").value);
+    var diasHospedagem = (saida.getTime() - entrada.getTime()) / (1000 * 60 * 60 * 24);
+    diasHospedagem = Math.ceil(diasHospedagem); 
+    var valorTotal = valorQuarto * diasHospedagem;
+    document.getElementById("valorHospedagem").value = valorTotal.toFixed(2);
+}
+    </script>
+</head>
+<body style="font-family: 'Noto Sans', sans-serif;">
+    <div class="main-login"> 
+        <div class="left-login">
+            <img src="IMG/animate.svg" class="left-login-image" alt="Animação">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Faça sua reserva!</h1>
+                
+                <div class="textfield">
+                    <label for="Nome-input">Nome:</label>
+                    <input type="text"  id="Nome"  placeholder="Nome">
+                </div>
+                <div class="textfield">
+                    <label for="acompanhante">Acompanhante:</label>
+                    <input type="text"  id="acompanhante"  placeholder="Nome" onchange="updateValorHospedagemComAcompanhante()">
+                </div>
+                <div class="textfield">
+                    <label for="CPF-input">CPF:</label>
+                    <input type="tel" id="CPF-input" placeholder="xxx.xxx.xxx-xx" onblur="validarCPF()" oninput="formatarCPF()">
+                </div>  
+                <div class="textfield">
+                    <label for="Quarto">Escolha o Quarto:</label>
+                <select id="quarto">
+                <option value="1" class="input" name="quarto" id="quarto1" data-valor="650" selected>Quarto de R$ 650</option>
+                <option value="2" class="input" name="quarto" id="quarto2" data-valor="750">Quarto de R$ 750</option>
+                <option value="3" class="input" name="quarto" id="quarto3" data-valor="850">Quarto de R$ 850</option>
+                <option value="4" class="input" name="quarto" id="quarto4" data-valor="800">Quarto de R$ 800</option>
+                <option value="5" class="input" name="quarto" id="quarto5" data-valor="2000">Apartamento de R$ 2000</option>
+                <option value="6" class="input" name="quarto" id="quarto6" data-valor="475">Quarto de R$ 475</option>
+                <option value="7" class="input" name="quarto" id="quarto7" data-valor="1479">SUÍTE de R$ 1469</option>
+                </select> 
+                </div>
+                <div class="textfield">
+                    <label for="numeroTelefone">Contato:</label>
+                    <input type="text" id="numeroTelefone" oninput="formatarTelefone()" placeholder="(XX) XXXXX-XXXX">
+                </div>   
+
+                <div class="textfield">
+                    <label for="Entrada">Entrada:</label>
+                    <input type="datetime-local" id="entrada" onchange="calcularValorHospedagem()">
+                </div>   
+                <div class="textfield">
+                    <label for="Saída">Saída:</label>
+                    <input type="datetime-local" id="saida" onchange="calcularValorHospedagem()">
+                </div>    
+                <div class="textfield">
+                    <label for="Valor da hospedagem">Valor da hospedagem:</label>
+                    <input type="text" id="valorHospedagem" oninput="calcularValorHospedagem()" readonly>
+                </div>             
+                <p color="red" id="mensagem-erro" ></p>
+                <form action="pagamentohotel.html" onsubmit="return validarFormulario()">
+                    <button type="submit" class="btn-login">Próximo</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

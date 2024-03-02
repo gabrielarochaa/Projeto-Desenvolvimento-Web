@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/pagamentohotel.css">
+    <link rel="icon" type="image/x-icon" href="IMG/logo2.svg">
+    <title>FlyPassagens form</title>
+    <script>
+        var cartoes = []; 
+
+        function validarFormulario() {
+            var nomecartao = document.getElementById("nomecartao").value;
+            var cartao = document.getElementById("cartao").value;
+            var validade = document.getElementById("validade").value;
+            var codigo = document.getElementById("codigo").value;
+            var tipoCartao = document.getElementById("tipoCartao").value;
+
+            if (nomecartao === "" || cartao === "" || validade === "" || codigo === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+                return false; 
+            } else {
+                var cartaoInfo = {
+                    titular: nomecartao,
+                    numero: cartao,
+                    validade: validade,
+                    codigo: codigo,
+                    tipo: tipoCartao
+                };
+                cartoes.push(cartaoInfo); 
+                localStorage.setItem("cartoes", JSON.stringify(cartoes)); 
+                alert("Compra finalizada com sucesso!");
+                return true;
+            }
+        }
+        
+        function formatarcartao() {
+            var cartao = document.getElementById("cartao").value;
+            var cartaoFormatado = cartao.replace(/\D/g, ''); 
+            document.getElementById("cartao").value = cartaoFormatado;
+        }
+        
+        function formatarcodigo() {
+            var codigo = document.getElementById("codigo").value;
+            var codigoFormatado = codigo.replace(/\D/g, ''); 
+            document.getElementById("codigo").value = codigoFormatado;
+        }
+
+    </script>
+</head>
+<body style="font-family: 'Noto Sans', sans-serif;">
+    <div class="main-login"> 
+        <div class="left-login">
+            <img src="IMG/animate.svg" class="left-login-image" alt="Animação">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Finalize sua compra!</h1>
+                <br>
+                <form>
+                    <div class="formulario" >
+                        <div class="textfield">
+                            <label for="nomecartao">Titular do cartão:</label>
+                            <input type="text" id="nomecartao">
+                        </div>
+                        <select id="tipoCartao">
+                            <option value="MasterCard">MasterCard</option>
+                            <option value="Visa">Visa</option>
+                            <option value="Elo Creditcard">Elo Creditcard</option>
+                            <option value="Diners Club">Diners Club</option>
+                            <option value="American Express">American Express</option>
+                        </select>
+                        <div class="textfield">
+                            <label for="cartao">Número do cartão:</label>
+                            <input type="text" id="cartao" oninput="formatarcartao()" placeholder="XXXX.XXXX.XXXX.XXXX" >
+                        </div>    
+                        <div class="textfield">
+                            <label for="validade">Data de validade:</label>
+                            <input type="month" id="validade">
+                        </div> 
+                        <div class="textfield">
+                            <label for="codigo">Código de segurança:</label>
+                            <input type="text" id="codigo" placeholder="XXX" oninput="formatarcodigo()">
+                        </div>
+                    </div>
+                </form>
+                <div class="textfield">
+                    <label for="Pedido">Pedidos especiais:</label>
+                    <textarea id="Pedido" rows="1" cols="5"></textarea>
+                </div>
+                <form onsubmit="return validarFormulario()">
+                    <button type="submit" class="btn-login" style="width: 75%; text-align: center;">Finalizar compra</button>
+                    <p id="mensagem-sucesso" style="display: none; color: green;">Compra realizada com sucesso!</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
